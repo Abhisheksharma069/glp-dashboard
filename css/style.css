@@ -44,12 +44,11 @@ nav{
 	
 }
 
-.logo{
-	font-size: 25px;
-	font-weight: bold;
-	color:#292929;
-	font-family:Poppins;
+.logoImg{
+	width: 45px;
+    transform: scale(1.9);
 }
+
 .toggle{
 	display: none;
 }
@@ -720,6 +719,11 @@ nav{
 	.modal-header {
 		padding: 12px;
 	}
+
+	.logoImg {
+		width: 35px;
+	}
+
 	.countTimer {
 		font-size: 25px;
 	}
