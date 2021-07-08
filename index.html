@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+
+<body>
+	<section >
+	<nav >
+	<a href="#" class="logo">LOGO</a>
+	<!--menu--------->
+	<div class="toggle" onclick="toggleNav(this)"></div>
+	<ul class="menu">
+	<li class="active"><a href="#main" >Home</a></li>	
+	<li><a href="#contact-form">User Info</a></li>	
+	<li><a href="#image-section">Images Section</a></li>
+	<li><a href="#contact-section">contact Section</a></li>	
+	</ul>
+	</nav>
+	</div>
+	</section>
+	
+	
+	<!--contact-form------------------->
+	<section id="contact-form">
+		<form id="userInfo" name="userInfo" onsubmit="return validateForm('userInfo')"> 
+		</form>
+	</section>
+
+	<!-- --------------------------section for searching images--------------------- -->
+	<section id="image-section">
+		<div>
+			<form >
+				<h1 class="image-heading"><span style="border-bottom: 3px solid #FFC107;">Image</span>s Section</h1>
+
+				<!-- using onkeyup to make it more responsive while typeing -->
+				<input type="text" id="search_val" name="query" placeholder="Search..." onkeyup="processChange(event)"/> 
+			</form>
+		</div>
+		<div id="small_img" class="flex-container">
+	
+		</div>
+
+	</section>
+
+	<!----------------------------contact section------------------>
+	<section id="contact-section">
+		<h1 class="header">Contact</h1>
+		<div class="contactContainer">
+			<div class="contactInfo">
+				<h5>Delhi, India</h5>
+				<h5>Phone:(+91) 009271627</h5>
+				<h5>Email:mail@gmail.com</h5>
+			</div>
+			<div class="contactMe">
+				<button class="contactbtn" onclick="openForm()">Contact Me</button>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- --------------------------fotter section--------------------- -->
+	<section id="fotter-section">
+		<div class="container ">
+            
+            <div class=" row ">
+                <div class="section-space ">
+                    <h4>LOCATION</h4>
+                    <hr style="text-align:left">
+                    <ul>
+                        <li>Coming soon near you</li>
+                    </ul>
+                </div>
+                <div class="section-space ">
+                    <h4>COMPANY</h4>
+                    <hr style="text-align:left">
+
+                    <ul>
+                        <li>About us</li>
+                    </ul>
+                </div>
+                <div class="section-space ">
+                    <h4>LEGAL</h4>
+                    <hr style="text-align:left">
+
+                    <ul class="text-left">
+                        <li>Terms &amp; Conditions</li>
+                        <li>Refund &amp; Cancellation</li>
+                        <li>Offer &amp; Terms</li>
+                    </ul>
+                </div>
+                <div class="section-space footer-logo">
+                    <h1>Logo</h1>
+                </div>
+
+            </div>
+        </div>
+
+	</section>
+
+
+
+<!--------------------------------------- modals--------------------------------- -->
+
+<div id="contactModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="contact-modal-content">
+		<form id="userInfoModal" name="userInfoModal" onsubmit="return validateForm('userInfoModal')"> 
+		</form>
+	</div>
+  
+</div>
+
+
+	<!-- Modal for images -->
+	<div id="imgModal" class="imgModal">
+	
+		<span class="closeImgModal" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+	  
+		<img class="img-modal-content" id="modalImg">
+	
+	</div>
+
+	<!-- Modal for sucess submit -->
+	<div id="sucessModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<span class="close">&times;</span>
+			<h2>Successfully Submitted !!</h2>
+		  </div>
+		  <div class="modal-body">
+			<div class="thankYouText">Thank you for your submission</div>
+			<div class="countTimer">reloading in... <span id="countDown" class="countDown">8</span>
+			</div>
+		  </div>
+		</div>
+	  
+	</div>
+	
+<!--------------------form template section ------------------->
+<template id="form-template">
+	<!--left--------------------------------------->
+	<div class="contact-left">
+		<h1 class="form-heading"><span style="border-bottom: 3px solid #FFC107;">Use</span>r Info</h1>
+		<div class="f-name">
+			<span >User Name</span>
+			<input type="text" placeholder="Full Name" name="name"/>
+		</div>
+		<div class="f-email">
+			<span >Email</span>
+			<input type="text" placeholder="Example@gmail.com" name="email"/>
+		</div>
+	</div>
+
+	<!--right------------------------------------------->
+	<div class="contact-right">
+		<div class="f-name">
+			<span >Password</span>
+			<input type="text" placeholder="Password" name="passWord"/>
+		</div>
+		<div class="f-email">
+			<span>Reset Password</span>
+			<input type="text" placeholder="Reset-Password" name="resetPassWord"/>
+		</div>
+		<p class="error" id="error"></p>
+		<input type="submit" value="Submit" class="submitbtn"></input>
+	</div>
+</template>
+<script type="text/javascript" src="js/home.js"></script>
+
+</body>
+</html>
